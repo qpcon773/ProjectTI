@@ -54,10 +54,10 @@ const stylesConfig = createUseStyles({
       width: "100%",
 
       "& .MuiListItemText-primary": {
-        fontSize: 16,
+        fontSize: "1.25rem",
 
         "@media (max-width: 1024px)": {
-          fontSize: 14,
+          fontSize: "1rem",
         },
       },
 
@@ -142,7 +142,7 @@ const Nav = () => {
         className={useStyles.navBox}
       >
         <div className="imgBox">
-          <img src="images/logo.svg" alt="" />
+          <img src="images/logo.svg" alt="logo" />
         </div>
 
         <List>

@@ -9,7 +9,8 @@ import { createUseStyles } from "react-jss";
 const stylesConfig = createUseStyles({
   contentMain: {
     display: "flex",
-    gap: [0, 24]
+    gap: "0 24px",
+    maxHeight: "100vh"
   },
 });
 

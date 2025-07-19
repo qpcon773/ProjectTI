@@ -1,4 +1,15 @@
 body {
   background: #ccc;
   font-family: "微軟正黑體, Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+
+  * {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #155fa0;
+
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+    }
+  }
 }
