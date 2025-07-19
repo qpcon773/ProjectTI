@@ -1,22 +1,25 @@
-import { Link, Outlet } from 'react-router-dom';
-import '@/assets/styles/index.scss';
+import { Outlet } from "react-router-dom";
+import "@/assets/styles/index.scss";
+import "@/assets/styles/reset.scss";
+
+import Nav from "@/layouts/Nav.jsx";
+
+import { createUseStyles } from "react-jss";
+
+const stylesConfig = createUseStyles({
+  contentMain: {
+    display: "flex",
+    gap: [0, 24]
+  },
+});
 
 function App() {
+  const useStyles = stylesConfig();
   return (
-    <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page">page</Link>
-          </li>
-        </ul>
-      </nav>
-      <hr />
+    <div className={useStyles.contentMain}>
+      <Nav></Nav>
       <Outlet />
-    </>
+    </div>
   );
 }
 
