@@ -6,6 +6,7 @@ const stylesConfig = createUseStyles({
     borderRadius: 24,
     padding: 24,
     overflow: "hidden",
+    width: "100%",
 
     "& .scrollBox": {
       height: "100%",

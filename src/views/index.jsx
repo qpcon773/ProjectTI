@@ -9,18 +9,6 @@ const stylesConfig = createUseStyles({
     gap: "16px 0",
     height: "100%",
 
-    "& h1": {
-      fontSize: "1.5rem",
-      fontWeight: "600",
-      textAlign: "center",
-      marginBottom: 32,
-
-      "@media (max-width: 1024px)": {
-        fontSize: "1.25rem",
-        marginBottom: 24,
-      },
-    },
-
     "& .img_logo": {
       width: 150,
       margin: [0, "auto"],

@@ -84,7 +84,7 @@ const navData = [
       {
         name: "捷運路線圖",
         id: 2,
-        path: "/page",
+        path: "/Map_MRT",
         children: [],
         icon: <MapIcon />,
         parentId: 1,

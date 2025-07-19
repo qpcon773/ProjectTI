@@ -12,4 +12,37 @@ body {
       font-size: 1rem;
     }
   }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+
+    @media (max-width: 1024px) {
+      font-size: 1.25rem;
+      margin-bottom: 24px;
+    }
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+
+    @media (max-width: 1024px) {
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  .hintText{
+    font-size: 0.875rem;
+    color: #7e7d7d;
+
+    .link{
+      color: #13c3f8;
+      text-decoration: underline;
+    }
+  }
 }
