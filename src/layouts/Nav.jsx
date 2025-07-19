@@ -106,9 +106,9 @@ const navData = [
     path: "",
     children: [
       {
-        name: "剩餘車位",
+        name: "租借站位查詢",
         id: 5,
-        path: "/page",
+        path: "/YouBike_Info",
         children: [],
         icon: <DirectionsBikeIcon />,
         parentId: 4,

@@ -1,8 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import userSlice from "@/features/apiSlice.js"
+import { configureStore } from '@reduxjs/toolkit';
+import useApiSlice from "@/features/apiSlice.js";
+import useLoadingSlice from '@/features/loadingSlice.js';
 
 export default configureStore({
   reducer: {
-    apiData: userSlice,
+    apiData: useApiSlice,
+    loading: useLoadingSlice,
   }
-})
+});

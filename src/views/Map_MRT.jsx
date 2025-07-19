@@ -22,7 +22,7 @@ function createMap_MRT() {
           <a
             href="https://www.metro.taipei/cp.aspx?n=91974F2B13D997F1"
             target="_blank"
-            class="link"
+            className="link"
           >
             臺北大眾捷運股份有限公司
           </a>
