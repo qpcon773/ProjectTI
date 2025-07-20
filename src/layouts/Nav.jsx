@@ -90,7 +90,7 @@ const navData = [
         parentId: 1,
       },
       {
-        name: "乘車資訊",
+        name: "車站資訊",
         id: 3,
         path: "/page",
         children: [],

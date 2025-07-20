@@ -13,10 +13,13 @@ const stylesConfig = createUseStyles({
     left: 0,
     width: "100vw",
     height: "100vh",
-    display: "none",
+    opacity: 0,
+    pointerEvents: "none",
+    transition: "opacity 0.3s ease",
 
     "&.focus": {
-      display: "block",
+      opacity: 1,
+      pointerEvents: "all",
     },
 
     "& .lightMask": {
