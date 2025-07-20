@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getBikeData } from "@/features/apiSlice";
+import { getBikeData } from "@/features/youBike_apiSlice";
 
 import ContentBox from "@/layouts/ContentBox.jsx";
 
@@ -25,13 +25,13 @@ const stylesConfig = createUseStyles({
   },
 });
 
-function createYouBike_Info() {
+function createInfo_YouBike() {
   const useStyles = stylesConfig();
   const dispatch = useDispatch();
-  const infos = useSelector((state) => state.apiData.infos);
+  const infos = useSelector((state) => state.youBike_apiData.infos);
   const [rows, setRows] = useState([]);
   const [page, setPage] = useState({ totalPage: 0, pageNow: 1 });
-  const prePage = 15;
+  const prePage = 20;
 
   useEffect(() => {
     dispatch(getBikeData());
@@ -85,59 +85,60 @@ function createYouBike_Info() {
   return (
     <ContentBox>
       <h2>租借站位查詢</h2>
-      {
-        <>
-          <TableContainer component={Paper}>
-            <Table aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>站點名稱</TableCell>
-                  <TableCell>站點位置</TableCell>
-                  <TableCell align="right">提供車柱數量</TableCell>
+
+      <>
+        <TableContainer component={Paper}>
+          <Table aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>站點名稱</TableCell>
+                <TableCell>站點位置</TableCell>
+                <TableCell align="right">提供車柱數量</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {pageFormat(rows).map((row) => (
+                <TableRow key={row.stationUID}>
+                  <TableCell>{row.stationName}</TableCell>
+                  <TableCell>
+                    <a
+                      href={`https://www.google.com/maps?q=${row.stationPosition.PositionLat},${row.stationPosition.PositionLon}`}
+                      target="_blank"
+                      className="link"
+                    >
+                      {row.stationAddress}
+                    </a>
+                  </TableCell>
+                  <TableCell align="right">{row.bikesCapacity}</TableCell>
                 </TableRow>
-              </TableHead>
-              <TableBody>
-                {pageFormat(rows).map((row) => (
-                  <TableRow key={row.stationUID}>
-                    <TableCell>{row.stationName}</TableCell>
-                    <TableCell>
-                      <a
-                        href={`https://www.google.com/maps?q=${row.stationPosition.PositionLat},${row.stationPosition.PositionLon}`}
-                        target="_blank"
-                        className="link"
-                      >
-                        {row.stationAddress}
-                      </a>
-                    </TableCell>
-                    <TableCell align="right">{row.bikesCapacity}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Stack spacing={2} className={useStyles.pagination}>
-            <Pagination
-              count={page.totalPage}
-              size="large"
-              onChange={handleChange}
-            />
-          </Stack>
-          <p className="hintText mt_20">
-            資料來源：
-            <a
-              href="https://tdx.transportdata.tw/api-service/swagger/basic/268fc230-2e04-471b-a728-a726167c1cfc#/Bike/BikeApi_Station_2180"
-              target="_blank"
-              className="link"
-            >
-              TDX 運輸資料流通服務
-            </a>
-            <br />
-            *本資料並非即時訊息
-          </p>
-        </>
-      }
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+
+        <Stack spacing={2} className={useStyles.pagination}>
+          <Pagination
+            count={page.totalPage}
+            size="large"
+            onChange={handleChange}
+          />
+        </Stack>
+
+        <p className="hintText">
+          資料來源：
+          <a
+            href="https://tdx.transportdata.tw/"
+            target="_blank"
+            className="link"
+          >
+            TDX 運輸資料流通服務
+          </a>
+          <br />
+          *本資料並非即時訊息
+        </p>
+      </>
     </ContentBox>
   );
 }
 
-export default createYouBike_Info;
+export default createInfo_YouBike;

@@ -1,8 +1,8 @@
 import App from "@/App.jsx";
 import Index from "@/views/Index.jsx";
-import Page from "@/views/Page.jsx";
 import Map_MRT from "@/views/Map_MRT.jsx";
-import YouBike_Info from "@/views/YouBike_Info.jsx";
+import Info_MRT from "@/views/Info_MRT.jsx";
+import Info_YouBike from "@/views/Info_YouBike.jsx";
 
 export const routers = {
   path: "/",
@@ -13,16 +13,16 @@ export const routers = {
       element: <Index />,
     },
     {
-      path: "/page",
-      element: <Page />,
-    },
-    {
       path: "/Map_MRT",
       element: <Map_MRT />,
     },
     {
-      path: "/YouBike_Info",
-      element: <YouBike_Info />,
+      path: "/Info_MRT",
+      element: <Info_MRT />,
+    },
+    {
+      path: "/Info_YouBike",
+      element: <Info_YouBike />,
     },
   ],
 };

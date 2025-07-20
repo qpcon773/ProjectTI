@@ -17,10 +17,6 @@ const youBikeSlice = createSlice({
       // 直接回傳initial資料, 重置資料
       return initialYouBikeData;
     },
-    putFakeData(state, action) {
-      // state對應綁定的資料, action對應傳入的值(多一層payload)
-      state.infos.push(action.payload);
-    },
   },
   extraReducers: (builder) => {
     // 非同步事件要使用"createAsyncThunk"建立, "extraReducers"做狀態管控
@@ -35,5 +31,5 @@ export const getBikeData = createAsyncThunk("youBike/info", async () => {
   return res.data;
 });
 
-export const { initData, putFakeData } = youBikeSlice.actions;
+export const { initData } = youBikeSlice.actions;
 export default youBikeSlice.reducer;

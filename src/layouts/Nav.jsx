@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import { useState } from "react";
 import React from "react";
+import { useState } from "react";
 
 import { createUseStyles } from "react-jss";
+import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
-
 import ListItemIcon from "@mui/material/ListItemIcon";
 // 展開收合
 import ExpandLess from "@mui/icons-material/ExpandLess";
@@ -25,6 +24,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
 // 剩餘車位
 import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
+
 const stylesConfig = createUseStyles({
   navBox: {
     height: "100vh",
@@ -90,9 +90,9 @@ const navData = [
         parentId: 1,
       },
       {
-        name: "車站資訊",
+        name: "車站轉運資訊",
         id: 3,
-        path: "/page",
+        path: "/Info_MRT",
         children: [],
         icon: <InfoIcon />,
         parentId: 1,
@@ -108,7 +108,7 @@ const navData = [
       {
         name: "租借站位查詢",
         id: 5,
-        path: "/YouBike_Info",
+        path: "/Info_YouBike",
         children: [],
         icon: <DirectionsBikeIcon />,
         parentId: 4,
